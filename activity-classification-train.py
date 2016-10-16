@@ -117,6 +117,7 @@ sys.stdout.flush()
 # We provided you with an example of plotting two features.
 # We plotted the mean X acceleration against the mean Y acceleration.
 # It should be clear from the plot that these two features are alone very uninformative.
+"""
 print("Plotting data points...")
 sys.stdout.flush()
 plt.figure()
@@ -125,7 +126,7 @@ for i in range(0,len(y),10): # only plot 1/10th of the points, it's a lot of dat
     plt.plot(X[i,0], X[i,1], formats[int(y[i])])
 
 plt.show()
-
+"""
 # %%---------------------------------------------------------------------------
 #
 #		                Train & Evaluate Classifier
@@ -170,10 +171,10 @@ print np.nanmean(precisionList, axis=0)
 print "average recall:"
 print np.nanmean(recallList, axis=0)
 
-export_graphviz(clf, out_file='charts/3_5tree.dot')
+#export_graphviz(clf, out_file='charts/3_5tree.dot')
 
 # TODO: Evaluate another classifier, i.e. SVM, Logistic Regression, k-NN, etc.
-
+"""
 logis = LogisticRegression()
 
 cv = cross_validation.KFold(n, n_folds=10, shuffle=False, random_state=None)
@@ -205,7 +206,7 @@ print np.nanmean(precisionList, axis=0)
 
 print "average recall:"
 print np.nanmean(recallList, axis=0)
-
+"""
 # TODO: Once you have collected data, train your best model on the entire
 # dataset. Then save it to disk as follows:
 
