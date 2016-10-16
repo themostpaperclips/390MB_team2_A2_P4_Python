@@ -62,7 +62,10 @@ def predict(window):
 
     # TODO: Predict class label
 
-    return
+    clf = pickle.load(open( "classifier.pickle", "rb" ))
+    label = clf.predict(extract_features(window))
+    print label
+    return label
 
 
 
