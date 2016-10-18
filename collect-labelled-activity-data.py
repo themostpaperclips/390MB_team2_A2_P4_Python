@@ -17,7 +17,7 @@ import json
 import numpy as np
 
 # TODO: Replace the string with your user ID
-user_id = "be.af.9a.d0.e9.3f.e3.db.8f.94"
+user_id = ""
 
 count = 0
 
@@ -114,13 +114,14 @@ try:
                     x = data['data']['x']
                     y = data['data']['y']
                     z = data['data']['z']
-                    label = data['data']['label']
+                    label = data['label']
                     labelled_data.append([t, x, y, z, label])
 
             sys.stdout.flush()
         except KeyboardInterrupt:
             # occurs when the user presses Ctrl-C
             print("User Interrupt. Quitting...")
+            raise KeyboardInterrupt
             break
         except Exception as e:
             # ignore exceptions, such as parsing the json
