@@ -65,7 +65,7 @@ def predict(window):
     clf = pickle.load(open( "classifier.pickle", "rb" ))
     label = clf.predict(extract_features(window))
     print label
-    return label
+    onActivityDetected(label)
 
 
 
