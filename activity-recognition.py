@@ -63,8 +63,8 @@ def predict(window):
     # TODO: Predict class label
 
     label = classifier.predict(extract_features(window))
-    print label
-    onActivityDetected(label)
+    print label[0]
+    onActivityDetected(label[0])
 
 
 
