@@ -141,7 +141,7 @@ n_classes = len(class_names)
 
 clf = DecisionTreeClassifier(max_depth=3, max_features=5)
 
-cv = cross_validation.KFold(n, n_folds=10, shuffle=False, random_state=None)
+cv = cross_validation.KFold(n, n_folds=10, shuffle=True, random_state=None)
 
 accuracyList = []
 precisionList = []
@@ -151,7 +151,7 @@ for i, (train_indexes, test_indexes) in enumerate(cv):
     print("Fold {}".format(i))
 
     clf.fit(X[train_indexes], y[train_indexes])
-    conf = confusion_matrix(clf.predict(X[test_indexes]), y[test_indexes])
+    conf = confusion_matrix(clf.predict(X[test_indexes]), y[test_indexes], labels=range(0, n_classes))
 
     accuracy = sum(sum(np.multiply(conf, np.eye(n_classes)))) / sum(sum(conf))
     accuracyList += [accuracy]
